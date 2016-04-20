@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env bash
+if [ -d $TM_DIRECTORY ] ; then
+  cd $TM_DIRECTORY 
+elif [ -d $TM_PROJECT_DIRECTORY ] ; then
+  cd $TM_PROJECT_DIRECTORY
+fi
+  
+GIT_ROOT=$(git rev-parse --show-toplevel)
+if [ -d $GIT_ROOT ] ; then
+  stree $GIT_ROOT
+fi</string>
+	<key>input</key>
+	<string>none</string>
+	<key>name</key>
+	<string>Open With SourceTree</string>
+	<key>outputLocation</key>
+	<string>discard</string>
+	<key>uuid</key>
+	<string>0830C4BF-8A3E-4D52-875A-1875C2D0F0F0</string>
+</dict>
+</plist>
